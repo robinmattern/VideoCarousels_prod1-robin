@@ -1,0 +1,14 @@
+{
+  "name": "nodejs-discord-server",
+  "description": "Installs Discord.JS module for developing Discord bots",
+  "version": "0.1.5",
+  "author": "8020data",
+  "license": "ISC",
+  "dependencies": {
+    "json-server": ""
+  },
+  "scripts": {
+    "start": "echo npm ERROR: * You must be in an app folder to start app",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}

@@ -1,0 +1,25 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"sqltools.connections": [
+			{
+				"mysqlOptions": {
+					"authProtocol": "default"
+				},
+				"previewLimit": 50,
+				"server": "localhost",
+				"port": 3306,
+				"driver": "MariaDB",
+				"name": "MySQL_LOCAL_WORLD",
+				"database": "world",
+				"username": "root",
+				"password": "FormR!1234"
+			}
+		],
+		"liveServer.settings.port": 5501
+	}
+}
