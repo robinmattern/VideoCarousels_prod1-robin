@@ -1,0 +1,208 @@
+/*\
+##=========+====================+================================================+
+##RD         fmtCarousel.css    | Stylesheet for Video Carousel
+##RFILE    +====================+=======+===============+======+=================+
+##FD   fmtCarousel.css          |  19714|  9/21/22 10:50|   316| u1.08-20620-1050
+##LIC      .--------------------+----------------------------------------------+
+#            Copyright (c) 2022 JScriptWare * Released under
+#            MIT License: http://www.opensource.org/licenses/mit-license.php
+#
+##CHGS     .--------------------+----------------------------------------------+
+# .(20901.01 10/01/20 RAM 10:00p| Created
+# .(20917.02  9/17/22 RAM  9:00a| Remove underline for Cue point items
+# .(20917.03  9/17/22 RAM  9:15a| Enable Item Decimal numbers to appear
+# .(20917.04  9/17/22 RAM 12:00p| Set left margin for Cue point items
+# .(20917.05  9/17/22 RAM  1:00p| Adjust space above caption
+# .(20920.05  9/20/22 RAM 10:00a| Change font family
+# .(20921.01  9/21/22 RAM  3:30p| Fix Pagination overflow. See .(20917.03.2)
+# .(20921.02  9/21/22 RAM  3:30p| Fix space above caption. See .(20917.05.1)
+# .(20921.03  9/21/22 RAM  3:45p| Change color for Pagination and Caption
+# .(20921.04  9/21/22 RAM  4:00p| Change background colors for scroll2
+#
+##SRCE     +====================+===============================================+
+\*/
+@import url(  'http://netdna.bootstrapcdn.com/twitter-bootstrap/2.0.4/css/bootstrap-combined.min.css' );
+@import url(  'https://fonts.googleapis.com/css?family=Source+Code+Pro|Lato|Roboto+Slab&display=swap' );
+@import url(  'https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200' );
+
+:root {
+    --font-family   : "Roboto+Slab";                      /* .(20920.05.1 RAM Added) */
+    --slideItems-left-margin: 90px;                       /* .(20917.04.1 RAM Added) */
+    }
+
+ #cover {
+    margin-top      : 40px;
+    }
+
+ #myCarousel {
+    margin-top      : 40px;
+    }
+
+ .pagination li {
+    margin-left     : 0px;                                /* .(20921.01.2 RAM Added; ol li { 70px; }No. 10 to wrap) */
+    }
+
+ .pagination a {
+    font-weight     : 900;
+    font-size       : 14px;
+    color           : #622934;                            /* .(20921.03.1 RAM Was: #4F6229) */
+    border          : 1px solid darkgrey;
+    }
+
+ .carousel-linked-nav, .item img {
+    display         : block;
+    margin          : 0 auto;
+    margin-left     : 0px;                                /* .(20921.01.2 RAM Added; ol li { 70px; }No. 10 to wrap) */
+    }
+
+ .carousel-control {
+    display         : none;
+    }
+
+ .carousel-linked-nav {
+    width           : 1280px;
+    text-align      : center;
+    margin-bottom   : 20px;
+    }
+
+ .carousel-linked-nav .pagination li .active {
+    font-weight     : 900;
+    color           : #4F6229;
+/*  border          : 2px solid red; */
+    }
+
+ #carousel {
+    width           : 1280px;
+    height          : 720px;
+    border          : 1px solid red;
+    }
+
+ .play3{
+    width           : 1280px;
+    height          : 720px;
+    }
+
+ .item {
+    width           : 1280px;
+    height          : 720px;
+    }
+
+/* li .active */
+/* .active {          // affects the active slide too
+    font-weight     : 900;
+    color           : #4F6229;
+    border          : 2px solid red !important;
+    }
+*/
+ .caption {
+    font-weight     : 900;
+    font-size       : 18px;
+    color           : #622934;                            /* .(20921.03.1 RAM Was: #4F6229) */
+    padding-top     : 8px;                                /* .(20917.05.1 RAM Changed to 10px ??).(20921.03.2 RAM Put back to 8px) */
+/*  margin-top      : 0px;                              *//*#.(20917.05.1 RAM Was: -10px).(20921.03.1)  */
+    }
+
+ .slideBG {
+    background-color: #D3D4CE;
+    }
+
+ .slideTitle {
+    font-family     : var(--font-family);                 /* .(20920.03.1 RAM Was: times;) */
+    font-size       : 86px;
+    color           : #4F6229;
+    font-weight     : bold;
+    padding-top     : 40px;
+    margin-bottom   : 17px;
+    margin-left     : 50px;
+   -webkit-text-stroke: 1px black;
+    }
+
+ .slideTitle1 {
+    font-family     : times;
+    font-size       : 86px;
+    color           : #4F6129;
+    font-weight     : bold;
+    padding-top     : 75px;   /* was 40px; */
+    margin-bottom   : 52px;   /* was 17px; */
+    margin-left     : 50px;
+   -webkit-text-stroke: 1px black;
+    }
+
+ .slideItemTitle {
+    font-family     : times;
+    font-size       : 48px;
+    color           : #4F6129;
+    font-weight     : bold;
+    padding-top     : 40px;
+    margin-bottom   : 17px;
+    margin-left     : 50px;
+    -webkit-text-stroke: 1px black;
+    }
+
+ .scroll {
+    background-color: #e9ecdf;
+    width           : 1140px;
+    height          : 517px;
+    overflow-x      : hidden;
+    overflow-y      : auto;
+    }
+
+ .scroll2 {
+    background-color: #dbddd1;                            /* .(20921.04.1 Was: #e9ecdf; ) */
+    width           : 1080px;
+    height          : 585px;
+    padding-left    : 9px;
+    overflow-x      : hidden;
+    overflow-y      : auto;
+    }
+/*
+ .scroll2::-webkit-scrollbar {
+    width: 20px;
+     } */
+
+ .slideItems {
+    font-family     : var(--font-family);                 /* .(20920.03.2 RAM Was: times;) */
+    font-size       : 48px;
+    color           : #4F6229;
+    font-weight     : bold;
+    text-align      : left;
+/*  margin-top      : 55px; */
+    margin-left     : var(--slideItems-left-margin);      /* .(20917.04.1 RAM Added. Was 140px; 48px;) */
+/*  line-height     : 144px !important;  *//* 48px; */
+    overflow-x      : hidden;
+    overflow-y      : auto;
+/*  list-style-position: outside; */
+/*  list-style-type : circle;  */
+    }
+
+ ol li {                                                  /* .(20917.02.1 RAM Beg Added) */
+/*  list-style-image: auto;  */
+/*  list-style-type : decimal;  */
+    margin-left     : 70px;                               /* .(20917.03.2 RAM Was 70px; caused "10" to overflow).(20921.01.1 RAM Caused Decimal items to appear) */
+    }                                                     /* .(20917.02.1 RAM End) */
+
+ .slideItem {
+    line-height     : 53px;
+    color           : #4F6229;
+    text-decoration : none;                               /* .(20917.01.1) */
+   -webkit-text-stroke: 1px black;
+    }
+
+ .goTo {
+    display         : block;
+    margin-left     : 75px;
+    color           : #ff0000;
+    font-size       : 36px;
+    line-height     : 40px;
+    text-align      : left;
+    }
+
+ .note {
+    position        : absolute;
+    top             : 690px;
+    margin-left     :  25px;
+    color           : purple;
+    font-weight     : bold;
+    font-size       :18px;
+    }
+
