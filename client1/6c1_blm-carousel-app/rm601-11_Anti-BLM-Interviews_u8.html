@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<!--
+##=========+====================+================================================+
+##RD         VideoCarousel      | Main Page
+##RFILE    +====================+=======+===============+======+=================+
+##FD   Anti-BLM-Interviews.html |      0|  9/01/22 10:50|     0| u1-20901-1050
+##FD   Anti-BLM-Interviews.html |   3960|  9/22/22 08:46|    85| u8-20922-0846
+##FD   Anti-BLM-Interviews.html |   4270|  9/24/22 16:29|    93| u8-20924-1629
+##DESC     .--------------------+-------+---------------+------+-----------------+
+#            This is the main page for a Video Slide show.  It begins with a table
+#            of contents for each video.  Each video can have a secondary list of
+#            cue points, allowing the user to jump to that cue point in the video.
+#
+##LIC      .--------------------+----------------------------------------------+
+#            Copyright (c) 2022 JScriptWare * Released under
+#            MIT License: http://www.opensource.org/licenses/mit-license.php
+##CHGS     .--------------------+----------------------------------------------+
+# .(20901.01  9/01/22 RAM 12:00p| Created
+# .(20922.01  9/22/22 RAM  8:45a| Changed ../._3c to ../._3c1
+# .(20924.02  9/24/22 RAM  4:15a| Add ProgressBar component
+
+##SRCE     +====================+===============================================+
+-->
+<html lang="en">
+  <head>
+    <meta  charset="utf-8">
+
+    <title>6c1. Anti-BLM Carousel (u8, 9-12-22)</title>
+
+    <meta  http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta  name="robots"             content="noindex, nofollow">
+    <meta  name="googlebot"          content="noindex, nofollow">
+    <meta  name="viewport"           content="width=device-width, initial-scale=1">
+
+    <script src='http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js'             type="text/javascript" ></script>
+    <script src='http://netdna.bootstrapcdn.com/twitter-bootstrap/2.0.4/js/bootstrap.min.js'  type="text/javascript" ></script>
+
+    <link  href='../._3c1/CSSs/fmtCarousel.css'      rel="stylesheet" > <!-- .(20922.01.1) -->
+    <link  href='./components/ProgressBar/style.css' rel="stylesheet" > <!-- .(20924.01.1) -->
+
+  </head>
+
+  <!-- --------------------------------------------------------------------------------- -->
+
+  <body>
+
+    <!-- --------------------------------------------------------------------------- -->
+
+    <div id="cover">
+<!--  <img src="assets/images/rm20912_BLM-CoverPage.png"/> -->
+    </div>
+
+    <div class="container">           <!-- .(20924.02.2 RAM Beg) -->
+      <div class="progress"></div>
+      <h2>Loading videos</h2>
+    </div>                            <!-- .(20924.02.2 RAM End) -->
+
+    <!-- --------------------------------------------------------------------------- -->
+
+    <div id="main" style="width: 1280px; height: 820px; border: 1px solid red; position: absolute; top: 0px;">
+
+      <!-- Carousel Slides -->
+      <!-- --------------------------------------------------------------------- -->
+      <div   class="carousel slide" id="myCarousel" >
+
+        <div class="carousel-inner" id="myItems" >
+
+        </div><!-- eoc carousel-inner items -->
+
+        <!-- Carousel navs -->
+        <!-- --------------------------------------------------------------- -->
+        <a   class="carousel-control left"  href="#myCarousel" data-slide="prev">&lsaquo;</a>
+        <a   class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
+
+      </div>  <!-- eoc carousel slide -->
+
+      <!-- Linked Navs -->
+      <!-- --------------------------------------------------------------------- -->
+      <ol    class="carousel-linked-nav pagination" id="myLinks" ></ol>
+
+    </div>
+
+    <!-- --------------------------------------------------------------------------- -->
+
+  </body>
+
+  <!-- --------------------------------------------------------------------------------- -->
+
+  <script src='./rm601-11_Anti-BLM-Interviews_u8.json.njs'   type="text/javascript"></script>
+  <script src='../._3c1/JSCs/fmtCarousel.njs'                type="text/javascript"></script> <!-- .(20922.01.2) -->
+  <script src='../._3c1/JSCs/runCarousel.njs'                type="text/javascript"></script> <!-- .(20922.01.3) -->
+
+  <script src='./components/ProgressBar/script.js'           type="text/javascript"></script> <!-- .(20924.02.3) -->
+</html>
