@@ -9,7 +9,7 @@
    viewer stops the videos from playing and resumes the slideshow. <br><br>  
 
    The three videos were captured from three newsworthy topics: 
-  ### 1. Interviews on Fox by black leaders 
+  ### 1. Interviews on Fox by Black Leaders 
   They discuss how destructive the BLM riots were to the black communities as well as efforts they are making to help restore families and hope to their neighbors. 
 
   ### 2. A recent hour-long special by Tucker Carlson
