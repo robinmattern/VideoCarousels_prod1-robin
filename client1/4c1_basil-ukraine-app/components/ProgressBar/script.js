@@ -1,81 +1,91 @@
-/*
- * (class)Progress<nowValue, minValue, maxValue>
- */
-// ------------------------------------------------------------------
+// -----------------------------------------------------------------------------------------------------
 
-class Progress { //Progress class
+       if (typeof(document) == 'undefined') { document = makDocument( ) }
 
-  constructor( now, min, max, options ) {
+// -----------------------------------------------------------------------------------------------------
 
-            this.dom    =  makDiv( "progress-bar" );
-            this.min    =  min;
-            this.max    =  max;
-            this.now    =  now;
+class Progress {                // Global class object
+
+//    --------------------------------------------------------------
+
+      constructor( now, min, max, options ) {
+
+            this.dom       =  makDiv( "progress-bar" );
+            this.min       =  min;
+            this.max       =  max;
+            this.now       =  now;
             this.intervalCode = 0;
 
-            console.log( `constructor[1]    Sync now: ${ this.now }` )
+            console.log( `constructor[1]    Sync set: ${ this.now }` )
             this.syncState( );
-        if (options.parent) { document.querySelector( options.parent ).appendChild( this.dom ); }
-          else              { document.body.appendChild( this.dom ) }
 
-        } // eom constructor
-//  ----------------------------------------------------
+        if (options.parent) {  document.querySelector( options.parent ).appendChild( this.dom ); }
+          else              {  document.body                           .appendChild( this.dom ) }
 
-  syncState( ) {
+
+        }   // eom constructor
+//    --------------------------------------------------------------
+
+      syncState( ) {
+
             this.dom.style.width = this.now + "%";
             console.log( `syncState[1]      Sync now: ${ this.now }` )
 
-        } // eom syncState
-//  ----------------------------------------------------
+        }   // eom syncState
+//    --------------------------------------------------------------
 
-   startTo( step, time ) {
+      startTo( step, time ) {
 
         if (this.intervalCode !== 0) { return; }
 
             this.intervalCode = setInterval( ( ) => {
 
-            if (this.now    +  step > this.max) {
-                this.now    =  this.max;
-                this.syncState();
-                clearInterval( this.intervalCode );  // was this.interval
-                this.intervalCode = 0;
-                return;
-                }
-                this.now += step;
-                this.syncState()
+//        ---------------------------------------------
 
-            }, time ) // eof setInterval( ( ) => { ... }, time )
+           if (this.now    +  step > this.max) {
+               this.now    =  this.max;
+               this.syncState( );
+               clearInterval( this.intervalCode );
+               return;
+               }
+               this.now += step;
+               this.syncState()
 
-        } // eom startTo
-//  ----------------------------------------------------
+            }, time )   // eof setInterval( ( ) => { ... }, time )
+//        ---------------------------------------------
+        }   // eom startTo
+//    --------------------------------------------------------------
 
-    end() {
-            this.now          =  this.max;
-            clearInterval(       this.intervalCode );
-            this.intervalCode =  0;
+      end() {
+
+            this.now       =  this.max;
+            clearInterval(    this.intervalCode );
             this.syncState( );
             console.log( `end[1]            Sync end: ${ this.now }` )
 
             document.querySelector( '.container h2' ).style.display = 'none';
             document.querySelector( '.progress'     ).style.display = 'none';
-        } // eom startTo
-//  ----------------------------------------------------
 
-} // eoc Progress
+        }   // eom startTo
+//    --------------------------------------------------------------
+   }   // eoc Progress
 // ------------------------------------------------------------------
 
-       let  pb  =  new Progress( 15, 0, 100, { parent : ".progress" } );
-            pb.startTo( 5, 500 ); // (step length, arg2 -> time(ms) )
+        var pProgress  =  new Progress( 5, 0, 100, { parent : ".progress" } );
 
-            setTimeout( () => { pb.end() }, 15000 ) //end to progress after 5s
+            pProgress.startTo( 10, 500 );                       // ( step length, time in msecs )
+
+            setTimeout( ( ) => { pProgress.end( ) }, 5000 )    // end progress after 5s
 
 // ------------------------------------------------------------------
 
   function  makDiv( aClassName ) {
+
             return elt( 'div', { className: aClassName } )
             }
 
   function  elt( type, prop, ...childrens ) { // helper function-> return <DOMelement>
+     try {
         let elem = document.createElement(type);
         if (prop) Object.assign( elem, prop );
        for (let child of childrens) {
@@ -83,6 +93,16 @@ class Progress { //Progress class
          else                         { elem.appendChild( elem ); }
             }
      return elem;
+     } catch( pErr ) { return { style: {} } }
+            } // eof elt
+//    --------------------------------------------------------------
+// -----------------------------------------------------------------------------------------------------
+
+   function makDocument() {
+        var pDocument   = { body: { appendChild: appendChild }
+                          , querySelector: function( ) { return { appendChild: appendChild, style: { } } }
+                            }
+     return pDocument
+   function appendChild() { console.log( "appendChild[1]" ) }
             }
-// ------------------------------------------------------------------
 
